@@ -24,17 +24,17 @@ const MyReservation = () => {
     useEffect(() => {
         if (formData.services.length > 0) {
             const totalAmount = formData.services.reduce((accumulator, currentValue) => {
-                const price = parseFloat(currentValue.price); // Convert price to a float
-                return accumulator + (isNaN(price) ? 0 : price); // Add price to accumulator if it's a valid number
+                const price = parseFloat(currentValue.price); 
+                return accumulator + (isNaN(price) ? 0 : price); 
             }, 0);
-            setTotal(totalAmount.toFixed(2)); // Fixing the total amount to 2 decimal places
+            setTotal(totalAmount.toFixed(2)); 
         }
     }, [formData.services]);
 
 
     const [showPopup, setShowPopup] = useState(false);
     const handleClosePopup = () => {
-        // Close the popup
+        
         setShowPopup(false);
         navigate(`/`);
 
